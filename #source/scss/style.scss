@@ -1,0 +1,315 @@
+//FONTS
+@import url("https://fonts.googleapis.com/css?family=Lato:regular,700,900,&display=swap");
+
+
+//--------------------------------------------------------------------------------------------------------------------------------------------
+// Файл обнуляющих стилей
+@import "nullstyle.scss";
+//--------------------------------------------------------------------------------------------------------------------------------------------
+
+
+body{
+	
+	font-family:"Lato";
+	color: #000000;
+	font-weight: 400;
+	
+}
+
+.wrapper{
+	min-height: 100%;
+	overflow: hidden;
+	display: flex;
+	flex-direction: column;
+}
+
+.page {
+	flex: 1 1 auto;
+}
+
+[class*="__container"]{
+		max-width: 1240px;
+		padding: 0px 15px;
+		margin: 0 auto;
+}
+
+
+
+// ------------------------MAIN----------------
+
+
+
+.main {
+	
+	background: url('../img/bg.jpg') no-repeat;
+	background-size: cover;
+	
+
+	
+	&__container {
+		
+	}
+
+	&__body {
+		padding-bottom: 80%;
+		position: relative;
+		transition: all 0.3s ease 0s;
+		
+	}
+}
+
+.body {
+		position: relative;
+		
+	&__autoparts {
+		
+		
+		&:after{
+			content: "";
+			border-radius: 100px;
+			width: 660px;
+			height: 0px;
+			position: absolute;
+			box-shadow: 10px 10px 60px 50px black;
+			left:35%;
+			top: 87%;
+			}
+			& img{
+			width: 480px;	
+		}	
+	}
+}
+.auto-parts {
+	
+	&__left-top {
+		position: absolute;
+		bottom: 27.5%;
+		left: 24.89%;
+		z-index: 10;
+		
+	}
+
+	&__right-top {
+		position: absolute;
+		bottom: 27.5%;
+		left: 64%;
+		z-index: 10;
+		
+	}
+
+	&__left-bottom {
+		position: absolute;
+		bottom: 0%;
+		left: 25%;
+		z-index: 10;
+		
+		
+	}
+
+	&__right-bottom {
+		position: absolute;
+		bottom: 0%;
+		left:64%;
+		z-index: 10;
+		
+	}
+
+		&__wheel {
+			
+			& img{
+				width: 132px;
+				position: absolute;
+				z-index: 10;
+				&:hover{
+					animation: move 0.1s infinite linear;
+				}
+			}
+			
+		}
+			&__wheel--left {
+				
+				&:hover{
+					&:before{
+						content: "";
+						border-radius: 100px;
+						width: 660px;
+						height: 0px;
+						position: absolute;
+						box-shadow: 10px 10px 100px 70px rgb(255, 255, 255);
+						left: -20%;
+						bottom: 17%;
+						}
+						
+				}
+				
+				img{
+					bottom: 6%;
+					left:37.2%;
+					z-index: 10;
+					
+				}
+				
+			}
+			&__wheel--right {
+				& img{
+					&:hover{
+						animation: moveback 0.9s infinite linear;
+					}
+				}
+				&:hover{
+					&:before{
+						content: "";
+						border-radius: 100px;
+						width: 660px;
+						height: 0px;
+						position: absolute;
+						left:0%;
+						bottom: 17%;
+						box-shadow: 50px 20px 60px 70px rgb(255, 255, 255);
+						border-radius: 5px;
+						border: 8px solid red;
+						opacity: 0.7;
+						z-index: 10;
+						width: 20px;
+						bottom: 22%;
+						left: 94%;
+						
+						}
+						
+				}
+				& img{
+					bottom: 6%;
+					right:9.9%;
+					
+				}
+				
+			}
+			&__backdoor {
+				position: absolute;
+				bottom: 26%;
+				left:85%;
+				z-index: 10;			
+				& img{
+					width: 120px;
+					height: 107px;
+					transition: all 2s ease 0s;
+					transform-origin: 0 0 ;
+					
+					&:hover{
+						transform: rotate(-45deg);
+						
+					}
+				}
+		}
+					&__rearlights {
+						
+						& img{
+							position: absolute;
+							z-index: 10;
+							width: 20px;
+							bottom: 22%;
+							left: 94%;
+							&:hover{
+								box-shadow: 80px 60px 180px 180px rgba(250, 2, 2, 0.359);
+								border-radius: 5px;
+								border: 8px solid rgba(255, 0, 0, 0.639);
+								opacity: 0.7;
+							}
+						}
+			}
+				
+					&__driver {
+						position: absolute;
+						bottom: 26%;
+						left: 64%;
+						z-index: 10;
+						& img{
+							width: 56px;
+						}
+						
+					}
+						&__passenger {
+							position: absolute;
+							bottom: 26%;
+							left: 73%;
+							z-index: 10;
+							
+						& img{
+							width: 144px;
+							opacity: 0;
+							transition: all 0.7s ease-in-out 0s;
+							&:hover{
+								opacity: 1;
+							}
+						}
+				}
+				
+				&__flicker {
+					
+					& img{
+						position: absolute;
+						z-index: 10;
+						width: 16px;
+						bottom: 19.6%;
+						left: 47.2%;
+						&:hover{
+							box-shadow: 0px 0px 90px 80px rgba(250, 200, 2, 0.781);
+							border-radius: 50%;
+							animation: pulse 1s infinite ease-in;
+							
+						}
+					}
+				}
+
+
+	}
+	
+
+
+
+@keyframes moveback {
+	0% {
+	transform: rotate(0deg);
+
+	}
+	50% {
+		transform: rotate(180deg);
+		
+	}
+	100% {
+		transform: rotate(360deg);
+		
+	}
+}
+
+
+@keyframes move {
+	0% {
+	transform: rotate(-0deg);
+
+	}
+	50% {
+		transform: rotate(-180deg);
+		
+	}
+	100% {
+		transform: rotate(-360deg);
+		
+	}
+}
+
+
+@keyframes pulse {
+	0% {
+		transform: scale(1,1.1);
+
+	}
+	50% {
+		transform: scale(1,1.5);
+		
+	}
+	100% {
+		transform: scale(1,1.1);
+		
+	}
+}
